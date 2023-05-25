@@ -1,0 +1,24 @@
+<ngt-mesh
+  #mesh
+  [position]="position"
+  [scale]="0.5"
+  (click)="selected.set(mesh)"
+  (pointerover)="hovered.set(true)"
+  (pointerout)="hovered.set(false)"
+>
+  <ngt-box-geometry />
+  <ngt-mesh-normal-material *ngIf="!hovered();else blah" />
+
+  <ng-template #blah>
+    <ngt-mesh-basic-material color="hotpink" />
+  </ng-template>
+
+  <ngt-mesh
+    *ngIf="selected()?.uuid === mesh.uuid"
+    [scale]="0.2"
+    [position]="[0, 1, 0]"
+  >
+    <ngt-sphere-geometry />
+    <ngt-mesh-normal-material />
+  </ngt-mesh>
+</ngt-mesh>

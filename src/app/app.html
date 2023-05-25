@@ -1,0 +1,10 @@
+<div style="display: flex; flex-direction: column; height: 100%">
+  <h1>Angular Conf</h1>
+  <div style="height: 80%">
+    <ngt-canvas
+      [sceneGraph]="scene"
+      [camera]="{position: [0, 13, 13]}"
+      (pointerMissed)="selected.set(null)"
+    />
+  </div>
+</div>

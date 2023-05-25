@@ -1,0 +1,6 @@
+<ngt-color *args="['#2b2a33']" attach="background" />
+
+<app-cube *ngFor="let i; repeat boxCount()" [position]="positions()[i]" />
+
+<ngts-orbit-controls [maxPolarAngle]="Math.PI / 3" [enablePan]="false" />
+<ngt-grid-helper *args="[20, 20]" />
